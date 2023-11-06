@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Optional chain</h2>
+    <script type = 'text/javascript'>
+        let users = [
+            {name:'Virat', age : 35, address : {state: 'MH', city: 'MBI'}},
+            {name:'Rohit', age : 36},
+            {name:'Rahul', age : 30, address : {state: 'KA', city: 'BLR'}},
+        ];
+        users.forEach((value, index) => 
+            document.write(`<p>Name = ${value.name}, State = ${value.address?.state}</p>`))
+    </script>
+</body>
+</html>

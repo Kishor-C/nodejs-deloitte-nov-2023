@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type = 'text/javascript'>
+        let items = [1, 8, 2, 3, 5];
+        items.forEach((value, index) => console.log(value))
+        let items2 = items.map((value, index) => value * 10);
+        items2.forEach((value, index) => console.log(value))
+        // rest parameter: accepts 0 or more parameters
+        function add(x, ...y) {
+            console.log(`x = ${x}, y = ${y}`);
+            let sum = x;
+            y.forEach((value, index) => sum = sum + value);
+            return sum;
+        }
+        function printArr(x, y, ...z) {
+            console.log(`x = ${x}, y = ${y}, z = ${z}`);
+        }
+        let result = add(20, 30, 10, 80);
+        // spread arguments: to distribute array of values to multiple arguments
+        let arr = [2, 8, 5, 90]
+        printArr(...arr);
+        // destructuring: assigning multiple values of an array to multiple variables
+        // without using the index, instead of let i = arr[0]; let j = arr[1];
+        let [i, j, k, l] = arr;
+        console.log(i, j, k, l);
+        document.write(`<h3>Result = ${result}</h3>`)
+    </script>
+</body>
+</html>

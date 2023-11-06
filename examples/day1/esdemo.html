@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Classes & Inheritance in Javascript</h2>
+    <script type = 'text/javascript'>
+        // in older version of javascript you need to use functions & prototypes to achieve inheritance
+        // it was a complex syntax compare to the new syntax
+        class Person { 
+            constructor(name, age)  {
+                this.name = name; // this is used to create properties
+                this.age = age;
+            }
+            // function inside the class should not use function keyword
+            display() {
+                console.log(`Name = ${this.name}, Age = ${this.age}`)
+            }
+        }
+        // extends to achieve inheritance & super to call the super class constructor
+        class Employee extends Person {
+            constructor(name, age, salary) {
+                super(name, age); // calls the super class constructor taking 2 parameters
+                this.salary = salary;
+            }
+            // override the display
+            display() {
+                console.log(`Name = ${this.name}, Age = ${this.age}, Salary = ${this.salary}`)
+            }
+        }
+        let person1 = new Person('Virat', 35);
+        let employee1 = new Employee('Rohit', 36, 50000);
+        person1.display();
+        employee1.display();
+    </script>
+</body>
+</html>
