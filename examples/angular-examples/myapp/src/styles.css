@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('~bootstrap/dist/css/bootstrap.css');
+
+.profilePic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.error-text {
+    color : red;
+}
+.success-text {
+    color : green;
+}

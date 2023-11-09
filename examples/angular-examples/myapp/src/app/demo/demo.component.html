@@ -1,0 +1,33 @@
+<div class = 'container-fluid'>
+    <h2>Demo works</h2>
+    <table class = 'table'>
+       <thead>
+        <tr>
+            <th>Pic</th><th>Id</th><th>Name</th><th>Phone</th><th>X</th>
+        </tr>
+       </thead>
+        <tbody>
+            <tr *ngFor = "let p of profiles">
+                <td><img class = 'profilePic' src = {{imageUrl}}></td>
+                <td>{{p.id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.phone}}</td>
+                <td><button class = 'btn btn-danger'>Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class = 'text-success'>Message : {{message}}</p>
+    <p class = 'text-danger'>Amount: {{amount}}</p>
+    <img class = 'profilePic' src = {{imageUrl}}>
+    <p>Amount in USD: {{ amount | currency: 'USD' }}</p>
+    <p>Amount in INR: {{ amount | currency: 'INR' }}</p>
+    <p>Amount in JPY: {{ amount | currency: 'JPY' }}</p>
+    <p>Dob : {{dob | date : 'MMM-dd-yyyy'}}</p>
+    <p>Dob : {{dob | date : 'dd-MMMM-yyyy'}}</p>
+    <p>Profiles : {{profiles | json}} </p>
+    <h3>Iterating the arrays using for loop</h3>
+    <ol>
+        <li *ngFor = 'let f of fruits'>{{f}}</li>
+    </ol>
+    
+</div>
