@@ -5,16 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { DemoComponent } from './demo/demo.component';
-
+import { FormsModule } from '@angular/forms';
+import { ProfileFormComponent } from './profile-form/profile-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
-    DemoComponent
+    DemoComponent,
+    ProfileFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,24 @@
+<div class = 'container'>
+    <h3>Profile Form</h3>
+    <hr />
+    <!-- in angular you will handle events as (eventName) -->
+    <!-- ngForm creates a object with a name profileForm { _id:v, name:v, k:v } -->
+    <form #profileForm = "ngForm" (ngSubmit) = 'handleForm(profileForm.value)'>
+        <div>
+            <!-- ngModel updates the profileForm with a key using the name i.e., 
+            _id : value -->
+            <input type = 'number' name = '_id' ngModel placeholder = 'Enter id' autocomplete = 'off'>
+        </div>
+        <div>
+            <!-- ngModel updates profileForm.name : value -->
+            <input type = 'text' name = 'name' ngModel placeholder = 'Enter name' autocomplete = 'off'>
+        </div>
+        <div>
+            <!-- ngModel updates profileForm.phone : value -->
+            <input type = 'number' name = 'phone' ngModel placeholder = 'Enter phone no' autocomplete = 'off'>
+        </div>
+        <div>
+            <input type = 'submit' value = 'Submit' class = 'btn btn-primary'>
+        </div>
+    </form>
+</div>
