@@ -7,6 +7,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { DemoComponent } from './demo/demo.component';
 import { FormsModule } from '@angular/forms';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { ProfileFormComponent } from './profile-form/profile-form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

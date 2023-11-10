@@ -2,7 +2,7 @@
     <h3>Profile Form</h3>
     <hr />
     <!-- in angular you will handle events as (eventName) -->
-    <!-- ngForm creates a object with a name profileForm { _id:v, name:v, k:v } -->
+    <!-- ngForm creates a object with a name profileForm { _id:v, name:v, phone:v } -->
     <form #profileForm = "ngForm" (ngSubmit) = 'handleForm(profileForm.value)'>
         <div>
             <!-- ngModel updates the profileForm with a key using the name i.e., 
@@ -21,4 +21,22 @@
             <input type = 'submit' value = 'Submit' class = 'btn btn-primary'>
         </div>
     </form>
+    <div>
+        <h3>To See the Fake Users</h3>
+        <button class = 'btn btn-primary' (click) = 'handleClick()'>Fetch</button>
+        <table class = 'table'>
+            <thead>
+                <th>Id</th><th>Name</th><th>Email</th><th>Street</th><th>City</th>
+            </thead>
+            <tbody>
+                <tr *ngFor = 'let user of fakeUsers'>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.address.street}}</td>
+                    <td>{{user.address.city}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

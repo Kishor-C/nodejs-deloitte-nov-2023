@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>A simple data sharing program</h2>
+        <input type = 'text' id = 'i1'>
+        <button onclick = 'send()'>Send</button>
+        <div id = 'd1'>Server Data: </div>
+    </div>
+    <!-- client also needs socket library to send & recieve data-->
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script type = 'text/javascript'>
+        function send() {
+            // connecting to the server socket
+            let socket = io();
+            // read the value form the input box
+            let value = document.querySelector('#i1').value;
+            socket.emit('clientKey', value);
+            let div = document.querySelector('#d1');
+            socket.on('serverKey', data => div.innerHTML = div.textContent + data)
+        }
+    </script>
+</body>
+</html>
